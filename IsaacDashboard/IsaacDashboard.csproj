@@ -1,0 +1,954 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6D6A0FD3-0970-433B-B159-65C01B79BA00}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>IsaacDashboard</RootNamespace>
+    <AssemblyName>IsaacDashboard</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="Xceed.Wpf.AvalonDock, Version=3.1.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.3.1\lib\net40\Xceed.Wpf.AvalonDock.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock.Themes.Aero, Version=3.1.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.3.1\lib\net40\Xceed.Wpf.AvalonDock.Themes.Aero.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock.Themes.Metro, Version=3.1.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.3.1\lib\net40\Xceed.Wpf.AvalonDock.Themes.Metro.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock.Themes.VS2010, Version=3.1.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.3.1\lib\net40\Xceed.Wpf.AvalonDock.Themes.VS2010.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.DataGrid, Version=3.1.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.3.1\lib\net40\Xceed.Wpf.DataGrid.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.Toolkit, Version=3.1.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.3.1\lib\net40\Xceed.Wpf.Toolkit.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Commons\View\CenteredImageModel.cs" />
+    <Compile Include="Commons\View\ExtraWindow.xaml.cs">
+      <DependentUpon>ExtraWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Commons\View\ExtraWindowModel.cs" />
+    <Compile Include="Commons\View\GeneralImage.xaml.cs">
+      <DependentUpon>GeneralImage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Commons\View\GeneralImageModel.cs" />
+    <Compile Include="Commons\View\StatefulWindow.cs" />
+    <Compile Include="Commons\View\ToolTab.xaml.cs">
+      <DependentUpon>ToolTab.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Commons\View\ToolTabModel.cs" />
+    <Compile Include="Isaac\AfterbirthBaseIsaacReader.cs" />
+    <Compile Include="Isaac\AfterbirthIsaacReader.cs" />
+    <Compile Include="Isaac\AfterbirthPlusIsaacReader.cs" />
+    <Compile Include="Isaac\Consumable.cs" />
+    <Compile Include="Isaac\IIsaacReader.cs" />
+    <Compile Include="Isaac\Item.cs" />
+    <Compile Include="Isaac\Items.cs" />
+    <Compile Include="Isaac\ModdedHelper.cs" />
+    <Compile Include="Isaac\ModdedItem.cs" />
+    <Compile Include="Isaac\Pills.cs" />
+    <Compile Include="Isaac\RebirthIsaacReader.cs" />
+    <Compile Include="Isaac\Trinkets.cs" />
+    <Compile Include="Isaac\VoidedItemEntry.cs" />
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Model\BaseModel.cs" />
+    <Compile Include="PillPool\Model\PillPollModel.cs" />
+    <Compile Include="PillPool\Model\PillRowModel.cs" />
+    <Compile Include="PillPool\PillPool.xaml.cs">
+      <DependentUpon>PillPool.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PillPool\PillRow.xaml.cs">
+      <DependentUpon>PillRow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Serializer\GeneralSettings.cs" />
+    <Compile Include="Serializer\IsaacDashSerializer.cs" />
+    <Compile Include="Serializer\IsaacDashSettings.cs" />
+    <Compile Include="Serializer\SoundFunSettings.cs" />
+    <Compile Include="Serializer\TabSettings.cs" />
+    <Compile Include="Serializer\TransformationTrackerSettings.cs" />
+    <Compile Include="Serializer\WindowSettings.cs" />
+    <Compile Include="SettingsModel.cs" />
+    <Compile Include="SmeltedTrinkets\SmeltedTrinkets.xaml.cs">
+      <DependentUpon>SmeltedTrinkets.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SoundFun\AddEditSoundDialog.xaml.cs">
+      <DependentUpon>AddEditSoundDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SoundFun\Model\MenuBarModel.cs" />
+    <Compile Include="SoundFun\Model\SoundDialogModel.cs" />
+    <Compile Include="SoundFun\Model\SoundRowModel.cs" />
+    <Compile Include="SoundFun\Player\SoundFunEntity.cs" />
+    <Compile Include="SoundFun\Player\SoundFunPlayer.cs" />
+    <Compile Include="SoundFun\Player\SoundFunSerializer.cs" />
+    <Compile Include="SoundFun\SoundFun.xaml.cs">
+      <DependentUpon>SoundFun.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SoundFun\SoundRow.xaml.cs">
+      <DependentUpon>SoundRow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="StatusBarModel.cs" />
+    <Compile Include="TransformationTracker\Model\AfterbirthPlusTransformations.cs" />
+    <Compile Include="TransformationTracker\Model\Transformation.cs" />
+    <Compile Include="TransformationTracker\Model\TransformationItem.cs" />
+    <Compile Include="TransformationTracker\Model\TransformationPill.cs" />
+    <Compile Include="TransformationTracker\Providers\AfterbirthBaseInfoProvider.cs" />
+    <Compile Include="TransformationTracker\Providers\AfterbirthPlusInfoProvider.cs" />
+    <Compile Include="TransformationTracker\Providers\BaseInfoProvider.cs" />
+    <Compile Include="TransformationTracker\Providers\TransformationInfoProvider.cs" />
+    <Compile Include="TransformationTracker\TransformationGrid.xaml.cs">
+      <DependentUpon>TransformationGrid.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TransformationTracker\TransformationItemControl.xaml.cs">
+      <DependentUpon>TransformationItemControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TransformationTracker\TransformationTracker.xaml.cs">
+      <DependentUpon>TransformationTracker.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Utils\ArrayUtils.cs" />
+    <Compile Include="Utils\CreationMode.cs" />
+    <Compile Include="Utils\Debouncer.cs" />
+    <Compile Include="Utils\FileUtils.cs" />
+    <Compile Include="Utils\FormUtils.cs" />
+    <Compile Include="Utils\ImageUtils.cs" />
+    <Compile Include="Utils\IsaacVersion.cs" />
+    <Compile Include="Utils\MemoryQuery.cs" />
+    <Compile Include="Utils\MemoryReader.cs" />
+    <Compile Include="Utils\MemoryReaderUtils.cs" />
+    <Compile Include="Utils\ResourcesUtil.cs" />
+    <Compile Include="Utils\Status.cs" />
+    <Compile Include="VoidedItems\VoidedItems.xaml.cs">
+      <DependentUpon>VoidedItems.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Commons\View\ExtraWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Commons\View\GeneralImage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Commons\View\ToolTab.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="MainWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PillPool\PillPool.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PillPool\PillRow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SmeltedTrinkets\SmeltedTrinkets.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SoundFun\AddEditSoundDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SoundFun\SoundFun.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SoundFun\SoundRow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TransformationTracker\TransformationGrid.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TransformationTracker\TransformationItemControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TransformationTracker\TransformationTracker.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="VoidedItems\VoidedItems.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Icons\external.png" />
+    <Resource Include="Images\Icons\main.png" />
+    <Resource Include="Images\Icons\soundfun.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Items\c1.png" />
+    <Resource Include="Images\Items\c10.png" />
+    <Resource Include="Images\Items\c100.png" />
+    <Resource Include="Images\Items\c101.png" />
+    <Resource Include="Images\Items\c102.png" />
+    <Resource Include="Images\Items\c103.png" />
+    <Resource Include="Images\Items\c104.png" />
+    <Resource Include="Images\Items\c105.png" />
+    <Resource Include="Images\Items\c106.png" />
+    <Resource Include="Images\Items\c107.png" />
+    <Resource Include="Images\Items\c108.png" />
+    <Resource Include="Images\Items\c109.png" />
+    <Resource Include="Images\Items\c11.png" />
+    <Resource Include="Images\Items\c110.png" />
+    <Resource Include="Images\Items\c111.png" />
+    <Resource Include="Images\Items\c112.png" />
+    <Resource Include="Images\Items\c113.png" />
+    <Resource Include="Images\Items\c114.png" />
+    <Resource Include="Images\Items\c115.png" />
+    <Resource Include="Images\Items\c116.png" />
+    <Resource Include="Images\Items\c117.png" />
+    <Resource Include="Images\Items\c118.png" />
+    <Resource Include="Images\Items\c119.png" />
+    <Resource Include="Images\Items\c12.png" />
+    <Resource Include="Images\Items\c120.png" />
+    <Resource Include="Images\Items\c121.png" />
+    <Resource Include="Images\Items\c122.png" />
+    <Resource Include="Images\Items\c123.png" />
+    <Resource Include="Images\Items\c124.png" />
+    <Resource Include="Images\Items\c125.png" />
+    <Resource Include="Images\Items\c126.png" />
+    <Resource Include="Images\Items\c127.png" />
+    <Resource Include="Images\Items\c128.png" />
+    <Resource Include="Images\Items\c129.png" />
+    <Resource Include="Images\Items\c13.png" />
+    <Resource Include="Images\Items\c130.png" />
+    <Resource Include="Images\Items\c131.png" />
+    <Resource Include="Images\Items\c132.png" />
+    <Resource Include="Images\Items\c133.png" />
+    <Resource Include="Images\Items\c134.png" />
+    <Resource Include="Images\Items\c135.png" />
+    <Resource Include="Images\Items\c136.png" />
+    <Resource Include="Images\Items\c137.png" />
+    <Resource Include="Images\Items\c138.png" />
+    <Resource Include="Images\Items\c139.png" />
+    <Resource Include="Images\Items\c14.png" />
+    <Resource Include="Images\Items\c140.png" />
+    <Resource Include="Images\Items\c141.png" />
+    <Resource Include="Images\Items\c142.png" />
+    <Resource Include="Images\Items\c143.png" />
+    <Resource Include="Images\Items\c144.png" />
+    <Resource Include="Images\Items\c145.png" />
+    <Resource Include="Images\Items\c146.png" />
+    <Resource Include="Images\Items\c147.png" />
+    <Resource Include="Images\Items\c148.png" />
+    <Resource Include="Images\Items\c149.png" />
+    <Resource Include="Images\Items\c15.png" />
+    <Resource Include="Images\Items\c150.png" />
+    <Resource Include="Images\Items\c151.png" />
+    <Resource Include="Images\Items\c152.png" />
+    <Resource Include="Images\Items\c153.png" />
+    <Resource Include="Images\Items\c154.png" />
+    <Resource Include="Images\Items\c155.png" />
+    <Resource Include="Images\Items\c156.png" />
+    <Resource Include="Images\Items\c157.png" />
+    <Resource Include="Images\Items\c158.png" />
+    <Resource Include="Images\Items\c159.png" />
+    <Resource Include="Images\Items\c16.png" />
+    <Resource Include="Images\Items\c160.png" />
+    <Resource Include="Images\Items\c161.png" />
+    <Resource Include="Images\Items\c162.png" />
+    <Resource Include="Images\Items\c163.png" />
+    <Resource Include="Images\Items\c164.png" />
+    <Resource Include="Images\Items\c165.png" />
+    <Resource Include="Images\Items\c166.png" />
+    <Resource Include="Images\Items\c167.png" />
+    <Resource Include="Images\Items\c168.png" />
+    <Resource Include="Images\Items\c169.png" />
+    <Resource Include="Images\Items\c17.png" />
+    <Resource Include="Images\Items\c170.png" />
+    <Resource Include="Images\Items\c171.png" />
+    <Resource Include="Images\Items\c172.png" />
+    <Resource Include="Images\Items\c173.png" />
+    <Resource Include="Images\Items\c174.png" />
+    <Resource Include="Images\Items\c175.png" />
+    <Resource Include="Images\Items\c176.png" />
+    <Resource Include="Images\Items\c177.png" />
+    <Resource Include="Images\Items\c178.png" />
+    <Resource Include="Images\Items\c179.png" />
+    <Resource Include="Images\Items\c18.png" />
+    <Resource Include="Images\Items\c180.png" />
+    <Resource Include="Images\Items\c181.png" />
+    <Resource Include="Images\Items\c182.png" />
+    <Resource Include="Images\Items\c183.png" />
+    <Resource Include="Images\Items\c184.png" />
+    <Resource Include="Images\Items\c185.png" />
+    <Resource Include="Images\Items\c186.png" />
+    <Resource Include="Images\Items\c187.png" />
+    <Resource Include="Images\Items\c188.png" />
+    <Resource Include="Images\Items\c189.png" />
+    <Resource Include="Images\Items\c19.png" />
+    <Resource Include="Images\Items\c190.png" />
+    <Resource Include="Images\Items\c191.png" />
+    <Resource Include="Images\Items\c192.png" />
+    <Resource Include="Images\Items\c193.png" />
+    <Resource Include="Images\Items\c194.png" />
+    <Resource Include="Images\Items\c195.png" />
+    <Resource Include="Images\Items\c196.png" />
+    <Resource Include="Images\Items\c197.png" />
+    <Resource Include="Images\Items\c198.png" />
+    <Resource Include="Images\Items\c199.png" />
+    <Resource Include="Images\Items\c2.png" />
+    <Resource Include="Images\Items\c20.png" />
+    <Resource Include="Images\Items\c200.png" />
+    <Resource Include="Images\Items\c201.png" />
+    <Resource Include="Images\Items\c202.png" />
+    <Resource Include="Images\Items\c203.png" />
+    <Resource Include="Images\Items\c204.png" />
+    <Resource Include="Images\Items\c205.png" />
+    <Resource Include="Images\Items\c206.png" />
+    <Resource Include="Images\Items\c207.png" />
+    <Resource Include="Images\Items\c208.png" />
+    <Resource Include="Images\Items\c209.png" />
+    <Resource Include="Images\Items\c21.png" />
+    <Resource Include="Images\Items\c210.png" />
+    <Resource Include="Images\Items\c211.png" />
+    <Resource Include="Images\Items\c212.png" />
+    <Resource Include="Images\Items\c213.png" />
+    <Resource Include="Images\Items\c214.png" />
+    <Resource Include="Images\Items\c215.png" />
+    <Resource Include="Images\Items\c216.png" />
+    <Resource Include="Images\Items\c217.png" />
+    <Resource Include="Images\Items\c218.png" />
+    <Resource Include="Images\Items\c219.png" />
+    <Resource Include="Images\Items\c22.png" />
+    <Resource Include="Images\Items\c220.png" />
+    <Resource Include="Images\Items\c221.png" />
+    <Resource Include="Images\Items\c222.png" />
+    <Resource Include="Images\Items\c223.png" />
+    <Resource Include="Images\Items\c224.png" />
+    <Resource Include="Images\Items\c225.png" />
+    <Resource Include="Images\Items\c226.png" />
+    <Resource Include="Images\Items\c227.png" />
+    <Resource Include="Images\Items\c228.png" />
+    <Resource Include="Images\Items\c229.png" />
+    <Resource Include="Images\Items\c23.png" />
+    <Resource Include="Images\Items\c230.png" />
+    <Resource Include="Images\Items\c231.png" />
+    <Resource Include="Images\Items\c232.png" />
+    <Resource Include="Images\Items\c233.png" />
+    <Resource Include="Images\Items\c234.png" />
+    <Resource Include="Images\Items\c236.png" />
+    <Resource Include="Images\Items\c237.png" />
+    <Resource Include="Images\Items\c238.png" />
+    <Resource Include="Images\Items\c239.png" />
+    <Resource Include="Images\Items\c24.png" />
+    <Resource Include="Images\Items\c240.png" />
+    <Resource Include="Images\Items\c241.png" />
+    <Resource Include="Images\Items\c242.png" />
+    <Resource Include="Images\Items\c243.png" />
+    <Resource Include="Images\Items\c244.png" />
+    <Resource Include="Images\Items\c245.png" />
+    <Resource Include="Images\Items\c246.png" />
+    <Resource Include="Images\Items\c247.png" />
+    <Resource Include="Images\Items\c248.png" />
+    <Resource Include="Images\Items\c249.png" />
+    <Resource Include="Images\Items\c25.png" />
+    <Resource Include="Images\Items\c250.png" />
+    <Resource Include="Images\Items\c251.png" />
+    <Resource Include="Images\Items\c252.png" />
+    <Resource Include="Images\Items\c253.png" />
+    <Resource Include="Images\Items\c254.png" />
+    <Resource Include="Images\Items\c255.png" />
+    <Resource Include="Images\Items\c256.png" />
+    <Resource Include="Images\Items\c257.png" />
+    <Resource Include="Images\Items\c258.png" />
+    <Resource Include="Images\Items\c259.png" />
+    <Resource Include="Images\Items\c26.png" />
+    <Resource Include="Images\Items\c260.png" />
+    <Resource Include="Images\Items\c261.png" />
+    <Resource Include="Images\Items\c262.png" />
+    <Resource Include="Images\Items\c264.png" />
+    <Resource Include="Images\Items\c265.png" />
+    <Resource Include="Images\Items\c266.png" />
+    <Resource Include="Images\Items\c267.png" />
+    <Resource Include="Images\Items\c268.png" />
+    <Resource Include="Images\Items\c269.png" />
+    <Resource Include="Images\Items\c27.png" />
+    <Resource Include="Images\Items\c270.png" />
+    <Resource Include="Images\Items\c271.png" />
+    <Resource Include="Images\Items\c272.png" />
+    <Resource Include="Images\Items\c273.png" />
+    <Resource Include="Images\Items\c274.png" />
+    <Resource Include="Images\Items\c275.png" />
+    <Resource Include="Images\Items\c276.png" />
+    <Resource Include="Images\Items\c277.png" />
+    <Resource Include="Images\Items\c278.png" />
+    <Resource Include="Images\Items\c279.png" />
+    <Resource Include="Images\Items\c28.png" />
+    <Resource Include="Images\Items\c280.png" />
+    <Resource Include="Images\Items\c281.png" />
+    <Resource Include="Images\Items\c282.png" />
+    <Resource Include="Images\Items\c283.png" />
+    <Resource Include="Images\Items\c284.png" />
+    <Resource Include="Images\Items\c285.png" />
+    <Resource Include="Images\Items\c286.png" />
+    <Resource Include="Images\Items\c287.png" />
+    <Resource Include="Images\Items\c288.png" />
+    <Resource Include="Images\Items\c289.png" />
+    <Resource Include="Images\Items\c29.png" />
+    <Resource Include="Images\Items\c290.png" />
+    <Resource Include="Images\Items\c291.png" />
+    <Resource Include="Images\Items\c292.png" />
+    <Resource Include="Images\Items\c293.png" />
+    <Resource Include="Images\Items\c294.png" />
+    <Resource Include="Images\Items\c295.png" />
+    <Resource Include="Images\Items\c296.png" />
+    <Resource Include="Images\Items\c297.png" />
+    <Resource Include="Images\Items\c298.png" />
+    <Resource Include="Images\Items\c299.png" />
+    <Resource Include="Images\Items\c3.png" />
+    <Resource Include="Images\Items\c30.png" />
+    <Resource Include="Images\Items\c300.png" />
+    <Resource Include="Images\Items\c301.png" />
+    <Resource Include="Images\Items\c302.png" />
+    <Resource Include="Images\Items\c303.png" />
+    <Resource Include="Images\Items\c304.png" />
+    <Resource Include="Images\Items\c305.png" />
+    <Resource Include="Images\Items\c306.png" />
+    <Resource Include="Images\Items\c307.png" />
+    <Resource Include="Images\Items\c308.png" />
+    <Resource Include="Images\Items\c309.png" />
+    <Resource Include="Images\Items\c31.png" />
+    <Resource Include="Images\Items\c310.png" />
+    <Resource Include="Images\Items\c311.png" />
+    <Resource Include="Images\Items\c312.png" />
+    <Resource Include="Images\Items\c313.png" />
+    <Resource Include="Images\Items\c314.png" />
+    <Resource Include="Images\Items\c315.png" />
+    <Resource Include="Images\Items\c316.png" />
+    <Resource Include="Images\Items\c317.png" />
+    <Resource Include="Images\Items\c318.png" />
+    <Resource Include="Images\Items\c319.png" />
+    <Resource Include="Images\Items\c32.png" />
+    <Resource Include="Images\Items\c320.png" />
+    <Resource Include="Images\Items\c321.png" />
+    <Resource Include="Images\Items\c322.png" />
+    <Resource Include="Images\Items\c323.png" />
+    <Resource Include="Images\Items\c324.png" />
+    <Resource Include="Images\Items\c325.png" />
+    <Resource Include="Images\Items\c326.png" />
+    <Resource Include="Images\Items\c327.png" />
+    <Resource Include="Images\Items\c328.png" />
+    <Resource Include="Images\Items\c329.png" />
+    <Resource Include="Images\Items\c33.png" />
+    <Resource Include="Images\Items\c330.png" />
+    <Resource Include="Images\Items\c331.png" />
+    <Resource Include="Images\Items\c332.png" />
+    <Resource Include="Images\Items\c333.png" />
+    <Resource Include="Images\Items\c334.png" />
+    <Resource Include="Images\Items\c335.png" />
+    <Resource Include="Images\Items\c336.png" />
+    <Resource Include="Images\Items\c337.png" />
+    <Resource Include="Images\Items\c338.png" />
+    <Resource Include="Images\Items\c339.png" />
+    <Resource Include="Images\Items\c34.png" />
+    <Resource Include="Images\Items\c340.png" />
+    <Resource Include="Images\Items\c341.png" />
+    <Resource Include="Images\Items\c342.png" />
+    <Resource Include="Images\Items\c343.png" />
+    <Resource Include="Images\Items\c344.png" />
+    <Resource Include="Images\Items\c345.png" />
+    <Resource Include="Images\Items\c346.png" />
+    <Resource Include="Images\Items\c347.png" />
+    <Resource Include="Images\Items\c348.png" />
+    <Resource Include="Images\Items\c349.png" />
+    <Resource Include="Images\Items\c35.png" />
+    <Resource Include="Images\Items\c350.png" />
+    <Resource Include="Images\Items\c351.png" />
+    <Resource Include="Images\Items\c352.png" />
+    <Resource Include="Images\Items\c353.png" />
+    <Resource Include="Images\Items\c354.png" />
+    <Resource Include="Images\Items\c355.png" />
+    <Resource Include="Images\Items\c356.png" />
+    <Resource Include="Images\Items\c357.png" />
+    <Resource Include="Images\Items\c358.png" />
+    <Resource Include="Images\Items\c359.png" />
+    <Resource Include="Images\Items\c36.png" />
+    <Resource Include="Images\Items\c360.png" />
+    <Resource Include="Images\Items\c361.png" />
+    <Resource Include="Images\Items\c362.png" />
+    <Resource Include="Images\Items\c363.png" />
+    <Resource Include="Images\Items\c364.png" />
+    <Resource Include="Images\Items\c365.png" />
+    <Resource Include="Images\Items\c366.png" />
+    <Resource Include="Images\Items\c367.png" />
+    <Resource Include="Images\Items\c368.png" />
+    <Resource Include="Images\Items\c369.png" />
+    <Resource Include="Images\Items\c37.png" />
+    <Resource Include="Images\Items\c370.png" />
+    <Resource Include="Images\Items\c371.png" />
+    <Resource Include="Images\Items\c372.png" />
+    <Resource Include="Images\Items\c373.png" />
+    <Resource Include="Images\Items\c374.png" />
+    <Resource Include="Images\Items\c375.png" />
+    <Resource Include="Images\Items\c376.png" />
+    <Resource Include="Images\Items\c377.png" />
+    <Resource Include="Images\Items\c378.png" />
+    <Resource Include="Images\Items\c379.png" />
+    <Resource Include="Images\Items\c38.png" />
+    <Resource Include="Images\Items\c380.png" />
+    <Resource Include="Images\Items\c381.png" />
+    <Resource Include="Images\Items\c382.png" />
+    <Resource Include="Images\Items\c383.png" />
+    <Resource Include="Images\Items\c384.png" />
+    <Resource Include="Images\Items\c385.png" />
+    <Resource Include="Images\Items\c386.png" />
+    <Resource Include="Images\Items\c387.png" />
+    <Resource Include="Images\Items\c388.png" />
+    <Resource Include="Images\Items\c389.png" />
+    <Resource Include="Images\Items\c39.png" />
+    <Resource Include="Images\Items\c390.png" />
+    <Resource Include="Images\Items\c391.png" />
+    <Resource Include="Images\Items\c392.png" />
+    <Resource Include="Images\Items\c393.png" />
+    <Resource Include="Images\Items\c394.png" />
+    <Resource Include="Images\Items\c395.png" />
+    <Resource Include="Images\Items\c396.png" />
+    <Resource Include="Images\Items\c397.png" />
+    <Resource Include="Images\Items\c398.png" />
+    <Resource Include="Images\Items\c399.png" />
+    <Resource Include="Images\Items\c4.png" />
+    <Resource Include="Images\Items\c40.png" />
+    <Resource Include="Images\Items\c400.png" />
+    <Resource Include="Images\Items\c401.png" />
+    <Resource Include="Images\Items\c402.png" />
+    <Resource Include="Images\Items\c403.png" />
+    <Resource Include="Images\Items\c404.png" />
+    <Resource Include="Images\Items\c405.png" />
+    <Resource Include="Images\Items\c406.png" />
+    <Resource Include="Images\Items\c407.png" />
+    <Resource Include="Images\Items\c408.png" />
+    <Resource Include="Images\Items\c409.png" />
+    <Resource Include="Images\Items\c41.png" />
+    <Resource Include="Images\Items\c410.png" />
+    <Resource Include="Images\Items\c411.png" />
+    <Resource Include="Images\Items\c412.png" />
+    <Resource Include="Images\Items\c413.png" />
+    <Resource Include="Images\Items\c414.png" />
+    <Resource Include="Images\Items\c415.png" />
+    <Resource Include="Images\Items\c416.png" />
+    <Resource Include="Images\Items\c417.png" />
+    <Resource Include="Images\Items\c418.png" />
+    <Resource Include="Images\Items\c419.png" />
+    <Resource Include="Images\Items\c42.png" />
+    <Resource Include="Images\Items\c420.png" />
+    <Resource Include="Images\Items\c421.png" />
+    <Resource Include="Images\Items\c422.png" />
+    <Resource Include="Images\Items\c423.png" />
+    <Resource Include="Images\Items\c424.png" />
+    <Resource Include="Images\Items\c425.png" />
+    <Resource Include="Images\Items\c426.png" />
+    <Resource Include="Images\Items\c427.png" />
+    <Resource Include="Images\Items\c428.png" />
+    <Resource Include="Images\Items\c429.png" />
+    <Resource Include="Images\Items\c430.png" />
+    <Resource Include="Images\Items\c431.png" />
+    <Resource Include="Images\Items\c432.png" />
+    <Resource Include="Images\Items\c433.png" />
+    <Resource Include="Images\Items\c434.png" />
+    <Resource Include="Images\Items\c435.png" />
+    <Resource Include="Images\Items\c436.png" />
+    <Resource Include="Images\Items\c437.png" />
+    <Resource Include="Images\Items\c438.png" />
+    <Resource Include="Images\Items\c439.png" />
+    <Resource Include="Images\Items\c44.png" />
+    <Resource Include="Images\Items\c440.png" />
+    <Resource Include="Images\Items\c441.png" />
+    <Resource Include="Images\Items\c442.png" />
+    <Resource Include="Images\Items\c443.png" />
+    <Resource Include="Images\Items\c444.png" />
+    <Resource Include="Images\Items\c445.png" />
+    <Resource Include="Images\Items\c446.png" />
+    <Resource Include="Images\Items\c447.png" />
+    <Resource Include="Images\Items\c448.png" />
+    <Resource Include="Images\Items\c449.png" />
+    <Resource Include="Images\Items\c45.png" />
+    <Resource Include="Images\Items\c450.png" />
+    <Resource Include="Images\Items\c451.png" />
+    <Resource Include="Images\Items\c452.png" />
+    <Resource Include="Images\Items\c453.png" />
+    <Resource Include="Images\Items\c454.png" />
+    <Resource Include="Images\Items\c455.png" />
+    <Resource Include="Images\Items\c456.png" />
+    <Resource Include="Images\Items\c457.png" />
+    <Resource Include="Images\Items\c458.png" />
+    <Resource Include="Images\Items\c459.png" />
+    <Resource Include="Images\Items\c46.png" />
+    <Resource Include="Images\Items\c460.png" />
+    <Resource Include="Images\Items\c461.png" />
+    <Resource Include="Images\Items\c462.png" />
+    <Resource Include="Images\Items\c463.png" />
+    <Resource Include="Images\Items\c464.png" />
+    <Resource Include="Images\Items\c465.png" />
+    <Resource Include="Images\Items\c466.png" />
+    <Resource Include="Images\Items\c467.png" />
+    <Resource Include="Images\Items\c468.png" />
+    <Resource Include="Images\Items\c469.png" />
+    <Resource Include="Images\Items\c47.png" />
+    <Resource Include="Images\Items\c470.png" />
+    <Resource Include="Images\Items\c471.png" />
+    <Resource Include="Images\Items\c472.png" />
+    <Resource Include="Images\Items\c473.png" />
+    <Resource Include="Images\Items\c474.png" />
+    <Resource Include="Images\Items\c475.png" />
+    <Resource Include="Images\Items\c476.png" />
+    <Resource Include="Images\Items\c477.png" />
+    <Resource Include="Images\Items\c478.png" />
+    <Resource Include="Images\Items\c479.png" />
+    <Resource Include="Images\Items\c48.png" />
+    <Resource Include="Images\Items\c480.png" />
+    <Resource Include="Images\Items\c481.png" />
+    <Resource Include="Images\Items\c482.png" />
+    <Resource Include="Images\Items\c483.png" />
+    <Resource Include="Images\Items\c484.png" />
+    <Resource Include="Images\Items\c485.png" />
+    <Resource Include="Images\Items\c486.png" />
+    <Resource Include="Images\Items\c487.png" />
+    <Resource Include="Images\Items\c488.png" />
+    <Resource Include="Images\Items\c489.png" />
+    <Resource Include="Images\Items\c49.png" />
+    <Resource Include="Images\Items\c490.png" />
+    <Resource Include="Images\Items\c491.png" />
+    <Resource Include="Images\Items\c492.png" />
+    <Resource Include="Images\Items\c493.png" />
+    <Resource Include="Images\Items\c494.png" />
+    <Resource Include="Images\Items\c495.png" />
+    <Resource Include="Images\Items\c496.png" />
+    <Resource Include="Images\Items\c497.png" />
+    <Resource Include="Images\Items\c498.png" />
+    <Resource Include="Images\Items\c499.png" />
+    <Resource Include="Images\Items\c5.png" />
+    <Resource Include="Images\Items\c50.png" />
+    <Resource Include="Images\Items\c500.png" />
+    <Resource Include="Images\Items\c501.png" />
+    <Resource Include="Images\Items\c502.png" />
+    <Resource Include="Images\Items\c503.png" />
+    <Resource Include="Images\Items\c504.png" />
+    <Resource Include="Images\Items\c505.png" />
+    <Resource Include="Images\Items\c506.png" />
+    <Resource Include="Images\Items\c507.png" />
+    <Resource Include="Images\Items\c508.png" />
+    <Resource Include="Images\Items\c509.png" />
+    <Resource Include="Images\Items\c51.png" />
+    <Resource Include="Images\Items\c510.png" />
+    <Resource Include="Images\Items\c52.png" />
+    <Resource Include="Images\Items\c53.png" />
+    <Resource Include="Images\Items\c54.png" />
+    <Resource Include="Images\Items\c55.png" />
+    <Resource Include="Images\Items\c56.png" />
+    <Resource Include="Images\Items\c57.png" />
+    <Resource Include="Images\Items\c58.png" />
+    <Resource Include="Images\Items\c6.png" />
+    <Resource Include="Images\Items\c60.png" />
+    <Resource Include="Images\Items\c62.png" />
+    <Resource Include="Images\Items\c63.png" />
+    <Resource Include="Images\Items\c64.png" />
+    <Resource Include="Images\Items\c65.png" />
+    <Resource Include="Images\Items\c66.png" />
+    <Resource Include="Images\Items\c67.png" />
+    <Resource Include="Images\Items\c68.png" />
+    <Resource Include="Images\Items\c69.png" />
+    <Resource Include="Images\Items\c7.png" />
+    <Resource Include="Images\Items\c70.png" />
+    <Resource Include="Images\Items\c71.png" />
+    <Resource Include="Images\Items\c72.png" />
+    <Resource Include="Images\Items\c73.png" />
+    <Resource Include="Images\Items\c74.png" />
+    <Resource Include="Images\Items\c75.png" />
+    <Resource Include="Images\Items\c76.png" />
+    <Resource Include="Images\Items\c77.png" />
+    <Resource Include="Images\Items\c78.png" />
+    <Resource Include="Images\Items\c79.png" />
+    <Resource Include="Images\Items\c8.png" />
+    <Resource Include="Images\Items\c80.png" />
+    <Resource Include="Images\Items\c81.png" />
+    <Resource Include="Images\Items\c82.png" />
+    <Resource Include="Images\Items\c83.png" />
+    <Resource Include="Images\Items\c84.png" />
+    <Resource Include="Images\Items\c85.png" />
+    <Resource Include="Images\Items\c86.png" />
+    <Resource Include="Images\Items\c87.png" />
+    <Resource Include="Images\Items\c88.png" />
+    <Resource Include="Images\Items\c89.png" />
+    <Resource Include="Images\Items\c9.png" />
+    <Resource Include="Images\Items\c90.png" />
+    <Resource Include="Images\Items\c91.png" />
+    <Resource Include="Images\Items\c92.png" />
+    <Resource Include="Images\Items\c93.png" />
+    <Resource Include="Images\Items\c94.png" />
+    <Resource Include="Images\Items\c95.png" />
+    <Resource Include="Images\Items\c96.png" />
+    <Resource Include="Images\Items\c97.png" />
+    <Resource Include="Images\Items\c98.png" />
+    <Resource Include="Images\Items\c99.png" />
+    <Resource Include="Images\Items\questionmark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Pills\pill0.png" />
+    <Resource Include="Images\Pills\pill1.png" />
+    <Resource Include="Images\Pills\pill10.png" />
+    <Resource Include="Images\Pills\pill11.png" />
+    <Resource Include="Images\Pills\pill12.png" />
+    <Resource Include="Images\Pills\pill13.png" />
+    <Resource Include="Images\Pills\pill2.png" />
+    <Resource Include="Images\Pills\pill3.png" />
+    <Resource Include="Images\Pills\pill4.png" />
+    <Resource Include="Images\Pills\pill5.png" />
+    <Resource Include="Images\Pills\pill6.png" />
+    <Resource Include="Images\Pills\pill7.png" />
+    <Resource Include="Images\Pills\pill8.png" />
+    <Resource Include="Images\Pills\pill9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\SoundFun\delete16.png" />
+    <Resource Include="Images\SoundFun\edit16.png" />
+    <Resource Include="Images\SoundFun\new24.png" />
+    <Resource Include="Images\SoundFun\pause24.png" />
+    <Resource Include="Images\SoundFun\play16.png" />
+    <Resource Include="Images\SoundFun\play24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Transformations\adult.png" />
+    <Resource Include="Images\Transformations\beelzebub.png" />
+    <Resource Include="Images\Transformations\bob.png" />
+    <Resource Include="Images\Transformations\bookworm.png" />
+    <Resource Include="Images\Transformations\conjoined.png" />
+    <Resource Include="Images\Transformations\funguy.png" />
+    <Resource Include="Images\Transformations\guppy.png" />
+    <Resource Include="Images\Transformations\leviathan.png" />
+    <Resource Include="Images\Transformations\mom.png" />
+    <Resource Include="Images\Transformations\ohcrap.png" />
+    <Resource Include="Images\Transformations\seraphim.png" />
+    <Resource Include="Images\Transformations\spiderbabytrans.png" />
+    <Resource Include="Images\Transformations\spun.png" />
+    <Resource Include="Images\Transformations\superbum.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Trinkets\t1.png" />
+    <Resource Include="Images\Trinkets\t10.png" />
+    <Resource Include="Images\Trinkets\t100.png" />
+    <Resource Include="Images\Trinkets\t101.png" />
+    <Resource Include="Images\Trinkets\t102.png" />
+    <Resource Include="Images\Trinkets\t103.png" />
+    <Resource Include="Images\Trinkets\t104.png" />
+    <Resource Include="Images\Trinkets\t105.png" />
+    <Resource Include="Images\Trinkets\t106.png" />
+    <Resource Include="Images\Trinkets\t107.png" />
+    <Resource Include="Images\Trinkets\t108.png" />
+    <Resource Include="Images\Trinkets\t109.png" />
+    <Resource Include="Images\Trinkets\t11.png" />
+    <Resource Include="Images\Trinkets\t110.png" />
+    <Resource Include="Images\Trinkets\t111.png" />
+    <Resource Include="Images\Trinkets\t112.png" />
+    <Resource Include="Images\Trinkets\t113.png" />
+    <Resource Include="Images\Trinkets\t114.png" />
+    <Resource Include="Images\Trinkets\t115.png" />
+    <Resource Include="Images\Trinkets\t116.png" />
+    <Resource Include="Images\Trinkets\t117.png" />
+    <Resource Include="Images\Trinkets\t118.png" />
+    <Resource Include="Images\Trinkets\t119.png" />
+    <Resource Include="Images\Trinkets\t12.png" />
+    <Resource Include="Images\Trinkets\t13.png" />
+    <Resource Include="Images\Trinkets\t14.png" />
+    <Resource Include="Images\Trinkets\t15.png" />
+    <Resource Include="Images\Trinkets\t16.png" />
+    <Resource Include="Images\Trinkets\t17.png" />
+    <Resource Include="Images\Trinkets\t18.png" />
+    <Resource Include="Images\Trinkets\t19.png" />
+    <Resource Include="Images\Trinkets\t2.png" />
+    <Resource Include="Images\Trinkets\t20.png" />
+    <Resource Include="Images\Trinkets\t21.png" />
+    <Resource Include="Images\Trinkets\t22.png" />
+    <Resource Include="Images\Trinkets\t23.png" />
+    <Resource Include="Images\Trinkets\t24.png" />
+    <Resource Include="Images\Trinkets\t25.png" />
+    <Resource Include="Images\Trinkets\t26.png" />
+    <Resource Include="Images\Trinkets\t27.png" />
+    <Resource Include="Images\Trinkets\t28.png" />
+    <Resource Include="Images\Trinkets\t29.png" />
+    <Resource Include="Images\Trinkets\t3.png" />
+    <Resource Include="Images\Trinkets\t30.png" />
+    <Resource Include="Images\Trinkets\t31.png" />
+    <Resource Include="Images\Trinkets\t32.png" />
+    <Resource Include="Images\Trinkets\t33.png" />
+    <Resource Include="Images\Trinkets\t34.png" />
+    <Resource Include="Images\Trinkets\t35.png" />
+    <Resource Include="Images\Trinkets\t36.png" />
+    <Resource Include="Images\Trinkets\t37.png" />
+    <Resource Include="Images\Trinkets\t38.png" />
+    <Resource Include="Images\Trinkets\t39.png" />
+    <Resource Include="Images\Trinkets\t4.png" />
+    <Resource Include="Images\Trinkets\t40.png" />
+    <Resource Include="Images\Trinkets\t41.png" />
+    <Resource Include="Images\Trinkets\t42.png" />
+    <Resource Include="Images\Trinkets\t43.png" />
+    <Resource Include="Images\Trinkets\t44.png" />
+    <Resource Include="Images\Trinkets\t45.png" />
+    <Resource Include="Images\Trinkets\t46.png" />
+    <Resource Include="Images\Trinkets\t47.png" />
+    <Resource Include="Images\Trinkets\t48.png" />
+    <Resource Include="Images\Trinkets\t49.png" />
+    <Resource Include="Images\Trinkets\t5.png" />
+    <Resource Include="Images\Trinkets\t50.png" />
+    <Resource Include="Images\Trinkets\t51.png" />
+    <Resource Include="Images\Trinkets\t52.png" />
+    <Resource Include="Images\Trinkets\t53.png" />
+    <Resource Include="Images\Trinkets\t54.png" />
+    <Resource Include="Images\Trinkets\t55.png" />
+    <Resource Include="Images\Trinkets\t56.png" />
+    <Resource Include="Images\Trinkets\t57.png" />
+    <Resource Include="Images\Trinkets\t58.png" />
+    <Resource Include="Images\Trinkets\t59.png" />
+    <Resource Include="Images\Trinkets\t6.png" />
+    <Resource Include="Images\Trinkets\t60.png" />
+    <Resource Include="Images\Trinkets\t61.png" />
+    <Resource Include="Images\Trinkets\t62.png" />
+    <Resource Include="Images\Trinkets\t63.png" />
+    <Resource Include="Images\Trinkets\t64.png" />
+    <Resource Include="Images\Trinkets\t65.png" />
+    <Resource Include="Images\Trinkets\t66.png" />
+    <Resource Include="Images\Trinkets\t67.png" />
+    <Resource Include="Images\Trinkets\t68.png" />
+    <Resource Include="Images\Trinkets\t69.png" />
+    <Resource Include="Images\Trinkets\t7.png" />
+    <Resource Include="Images\Trinkets\t70.png" />
+    <Resource Include="Images\Trinkets\t71.png" />
+    <Resource Include="Images\Trinkets\t72.png" />
+    <Resource Include="Images\Trinkets\t73.png" />
+    <Resource Include="Images\Trinkets\t74.png" />
+    <Resource Include="Images\Trinkets\t75.png" />
+    <Resource Include="Images\Trinkets\t76.png" />
+    <Resource Include="Images\Trinkets\t77.png" />
+    <Resource Include="Images\Trinkets\t78.png" />
+    <Resource Include="Images\Trinkets\t79.png" />
+    <Resource Include="Images\Trinkets\t8.png" />
+    <Resource Include="Images\Trinkets\t80.png" />
+    <Resource Include="Images\Trinkets\t81.png" />
+    <Resource Include="Images\Trinkets\t82.png" />
+    <Resource Include="Images\Trinkets\t83.png" />
+    <Resource Include="Images\Trinkets\t84.png" />
+    <Resource Include="Images\Trinkets\t85.png" />
+    <Resource Include="Images\Trinkets\t86.png" />
+    <Resource Include="Images\Trinkets\t87.png" />
+    <Resource Include="Images\Trinkets\t88.png" />
+    <Resource Include="Images\Trinkets\t89.png" />
+    <Resource Include="Images\Trinkets\t9.png" />
+    <Resource Include="Images\Trinkets\t90.png" />
+    <Resource Include="Images\Trinkets\t91.png" />
+    <Resource Include="Images\Trinkets\t92.png" />
+    <Resource Include="Images\Trinkets\t93.png" />
+    <Resource Include="Images\Trinkets\t94.png" />
+    <Resource Include="Images\Trinkets\t95.png" />
+    <Resource Include="Images\Trinkets\t96.png" />
+    <Resource Include="Images\Trinkets\t97.png" />
+    <Resource Include="Images\Trinkets\t98.png" />
+    <Resource Include="Images\Trinkets\t99.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\block.png" />
+    <Resource Include="Images\ring.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <COMReference Include="WMPLib">
+      <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
