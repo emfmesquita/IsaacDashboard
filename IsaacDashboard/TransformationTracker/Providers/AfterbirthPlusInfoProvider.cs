@@ -7,7 +7,7 @@ using static IsaacDashboard.Utils.MemoryReader;
 namespace IsaacDashboard.TransformationTracker.Providers {
     public class AfterbirthPlusInfoProvider : AfterbirthBaseInfoProvider {
 
-        private const int PillsOffset = 33024;
+        private const int PillsOffset = 32076;
         private const int PubertyId = 9;
         private int _pubertyPill;
         private readonly IIsaacReader _reader = new AfterbirthPlusIsaacReader();

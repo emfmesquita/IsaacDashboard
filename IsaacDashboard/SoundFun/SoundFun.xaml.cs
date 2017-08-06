@@ -89,7 +89,8 @@ namespace IsaacDashboard.SoundFun {
                 return;
             }
 
-            var reseted = reader.GetTimeCounter() < 2;
+            var timerCounter = reader.GetTimeCounter();
+            var reseted = timerCounter < 2;
             // resets on hold "r"
             if (reseted) {
                 SoundFunPlayer.ResetTouchedItems();

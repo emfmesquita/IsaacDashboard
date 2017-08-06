@@ -123,13 +123,13 @@ namespace IsaacDashboard.SoundFun {
             Items.RebirthItems.ToList().Select(pair => pair.Value).ToList().ForEach(sortedItems.Add);
             Items.AfterbirthItems.ToList().Select(pair => pair.Value).ToList().ForEach(sortedItems.Add);
             Items.AfterbirthPlusItems.ToList().Select(pair => pair.Value).ToList().ForEach(sortedItems.Add);
-            Items.AntibirthItems.ToList().Select(pair => pair.Value).ToList().ForEach(item => {
-                var editedItem = new Item {
-                    Id = item.Id,
-                    I18N = item.I18N + " (Antibirth)"
-                };
-                sortedItems.Add(editedItem);
-            });
+            //Items.AntibirthItems.ToList().Select(pair => pair.Value).ToList().ForEach(item => {
+            //    var editedItem = new Item {
+            //        Id = item.Id,
+            //        I18N = item.I18N + " (Antibirth)"
+            //    };
+            //    sortedItems.Add(editedItem);
+            //});
             sortedItems.Sort((itemA, itemB) => string.Compare(itemA.I18N, itemB.I18N, StringComparison.Ordinal));
             return sortedItems;
         }

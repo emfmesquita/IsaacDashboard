@@ -35,12 +35,13 @@ namespace IsaacDashboard.Utils {
             SearchPattern = "bbbbbbbbbbvvvvb"
         };
 
+        public static MemoryQuery AbPlusPlayerManagerInstructPointerQuery = new MemoryQuery() {
+            SearchInt = new[] { 0x89, 0x44, 0x24, 0x34, 0xA1, 0x00, 0x00, 0x00, 0x00, 0x85, 0xC0 },
+            SearchPattern = "bbbbbvvvvbb"
+        };
+
         public static MemoryQuery PlayerManagerPlayerListOffsetQuery = new MemoryQuery() {
-            SearchInt =
-                new[] {
-                    0x8B, 0x35, 0x00, 0x00, 0x00, 0x00, 0x8B, 0x86, 0x00, 0x00, 0x00, 0x00, 0x2B, 0x86, 0x00, 0x00, 0x00,
-                    0x00
-                },
+            SearchInt = new[] { 0x8B, 0x35, 0x00, 0x00, 0x00, 0x00, 0x8B, 0x86, 0x00, 0x00, 0x00, 0x00, 0x2B, 0x86, 0x00, 0x00, 0x00, 0x00 },
             SearchPattern = "bb????bb????bbvv??"
         };
 
@@ -102,8 +103,13 @@ namespace IsaacDashboard.Utils {
                 _version = isAntibirth ? IsaacVersion.Antibirth : IsaacVersion.Rebirth;
             }
 
-            var instructSearchOffset = isAfterbirth ? 1500000 : 1100000;
-            _playerManagerInstructPointer = Search(PlayerManagerInstructPointerQuery, false, instructSearchOffset).QueryResult;
+            if (_version == IsaacVersion.AfterbirthPlus) {
+                _playerManagerInstructPointer = Search(AbPlusPlayerManagerInstructPointerQuery).QueryResult;
+            } else {
+                var instructSearchOffset = isAfterbirth ? 1500000 : 1100000;
+                _playerManagerInstructPointer = Search(PlayerManagerInstructPointerQuery, false, instructSearchOffset).QueryResult;
+            }
+
 
             var playerListSearchOffset = isAfterbirth ? 50000 : 120000;
             _playerManagerPlayerListOffset = Search(PlayerManagerPlayerListOffsetQuery, false, playerListSearchOffset).QueryResult;

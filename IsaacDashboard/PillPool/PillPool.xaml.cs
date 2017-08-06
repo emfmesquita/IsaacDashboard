@@ -78,7 +78,10 @@ namespace IsaacDashboard.PillPool {
                 if (lastPillIndex == 0 || pool.Count < lastPillIndex) {
                     Model.LastPillVisibility = Visibility.Hidden;
                 } else {
-                    var lastPill = pool[lastPillIndex - 1];
+                    Item lastPill = null;
+                    if (lastPillIndex > 0 && lastPillIndex <= 13) {
+                        lastPill = pool[lastPillIndex - 1];
+                    }
                     SetPill(LastPill.Model, lastPill, lastPillIndex, true, toGoodPills);
                     Model.LastPillVisibility = Visibility.Visible;
                 }
@@ -117,6 +120,12 @@ namespace IsaacDashboard.PillPool {
         }
 
         private static void SetPill(PillRowModel pillModel, Item pill, int pillPoolIndex, bool known, bool toGoodPills) {
+            pillModel.PillImageResource = ResourcesUtil.PillResource(pillPoolIndex);
+            if (pill == null) {
+                pillModel.Label = "Error";
+                return;
+            }
+
             var label = pill.I18N;
             if (pill.Id == 1) {
                 label = toGoodPills ? "Balls of Steel" : "Bad Trip/Full Health";
@@ -148,7 +157,6 @@ namespace IsaacDashboard.PillPool {
                 label = "Something's wrong...";
             }
             pillModel.Label = known ? label : "-";
-            pillModel.PillImageResource = ResourcesUtil.PillResource(pillPoolIndex);
         }
     }
 }

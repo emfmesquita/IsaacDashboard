@@ -7,21 +7,26 @@ namespace IsaacDashboard.Isaac {
     public class AfterbirthPlusIsaacReader : AfterbirthBaseIsaacReader {
         private readonly List<Item> _voidedItems = new List<Item>();
 
+
         private const int ItemBlacklistOffset = 31836;
-        private const int HasItemOffset = 7600;
+        private const int HasItemOffset = 10084;
         private const int CursesOffset = 12;
         private const int TouchedItensListInitOffset = 30428;
-        private const int TimeCounterOffset = 2178748;
-        private const int GamePausedOffset = 1245636;
+
+        private const int TimeCounterOffset = 2177804;
+        private const int GamePausedOffset = 1244692;
+        
         private const int SmeltedTrinketsPointerOffset = 7588;
-        private const int PillsOffset = 33028;
-        //private const int PillCountPointerOffset = 7624;
-        private const int PillKnownOffset = 33081;
-        private const int LastPillTakenOffset = 7680;
+
         private const int VoidedItemsInitOffset = 7612;
-        private const int SeedOffset = 451880;
-        private const int PillCardIdOffset = 7732;
-        private const int IsPillOrCardOffset = 7736;
+
+        private const int PillsOffset = 32080;
+        private const int PillKnownOffset = 32133;
+        private const int LastPillTakenOffset = 10164;
+        private const int PillCardIdOffset = 10216;
+        private const int IsPillOrCardOffset = 10220;
+
+        private const int SeedOffset = 41480;
 
         public override bool HasItem(Item item) {
             var hasItemPointer = GetPlayerInfo(HasItemOffset);
@@ -102,23 +107,14 @@ namespace IsaacDashboard.Isaac {
             var pillPoolArray = Read(playermanagetInstruct + PillsOffset, 13 * 4);
             for (var i = 0; i < 13; i++) {
                 var pillId = MemoryReaderUtils.ConvertLittleEndian(pillPoolArray, i * 4, 4);
+                if (pillId < 0) {
+                    pillPool.Add(null);
+                    continue;
+                }
                 pillPool.Add(pillId < ModdedHelper.UnmoddedPillsCount ? Pills.AllPills[pillId] : ModdedHelper.GetModdedPill(pillId));
             }
             return pillPool;
         }
-
-        //public Dictionary<int, int> GetPillCount() {
-        //    var pillCount = new Dictionary<int, int>();
-        //    var pillCountOffset = GetPlayerInfo(PillCountPointerOffset);
-        //    if (pillCountOffset == 0) {
-        //        return pillCount;
-        //    }
-        //    var pillCountArray = Read(pillCountOffset, 47 * 4);
-        //    for (var i = 0; i < 47; i++) {
-        //        pillCount.Add(i, MemoryReaderUtils.ConvertLittleEndian(pillCountArray, i * 4, 4));
-        //    }
-        //    return pillCount;
-        //}
 
         public override List<bool> GetPillKnowledge() {
             var pillKnowledge = new List<bool>();
@@ -139,7 +135,7 @@ namespace IsaacDashboard.Isaac {
         }
 
         public override int GetSeed() {
-            return GetGameManagerInfo(SeedOffset, 4);
+            return GetPlayerInfo(SeedOffset, 4);
         }
 
         public override int GetPillCardId() {

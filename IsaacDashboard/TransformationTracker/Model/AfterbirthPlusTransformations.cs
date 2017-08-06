@@ -3,7 +3,7 @@
 namespace IsaacDashboard.TransformationTracker.Model {
     public class AfterbirthPlusTransformations {
 
-        public static readonly Transformation Guppy = new Transformation("guppy", "Guppy", 7768, 0, -4, 0.75F) {
+        public static readonly Transformation Guppy = new Transformation("guppy", "Guppy", 10252, 0, -4, 0.75F) {
             Items = new List<TransformationItem>() {
                 new TransformationItem("Dead Cat", 81, -2, -2, 1.20F, 0.65F),
                 new TransformationItem("Guppy's Paw", 133, -23, 27, 1.55F, 0.55F),
@@ -14,7 +14,7 @@ namespace IsaacDashboard.TransformationTracker.Model {
             }
         };
 
-        public static readonly Transformation Beelzebub = new Transformation("beelzebub", "Beelzebub", 7772, -1, -6, 0.85F) {
+        public static readonly Transformation Beelzebub = new Transformation("beelzebub", "Beelzebub", 10256, -1, -6, 0.85F) {
             Items = new List<TransformationItem>() {
                 new TransformationItem("Skatole", 9, 31, 29, 1.00F, 0.60F),
                 new TransformationItem("Halo Of Flies", 10, -34, 26, 1.00F, 0.65F),
@@ -36,7 +36,7 @@ namespace IsaacDashboard.TransformationTracker.Model {
             }
         };
 
-        public static readonly Transformation FunGuy = new Transformation("funguy", "Fun Guy", 7776, 0, 4, 0.70F) {
+        public static readonly Transformation FunGuy = new Transformation("funguy", "Fun Guy", 10260, 0, 4, 0.70F) {
             Items = new List<TransformationItem>() {
                 new TransformationItem("1up!", 11, -38, 2, 1.50F, 0.55F),
                 new TransformationItem("Magic Mushroom", 12, 18, -26, 1.90F, 0.50F),
@@ -48,7 +48,7 @@ namespace IsaacDashboard.TransformationTracker.Model {
             }
         };
 
-        public static readonly Transformation Seraphim = new Transformation("seraphim", "Seraphim", 7780, -2, -8, 0.75F) {
+        public static readonly Transformation Seraphim = new Transformation("seraphim", "Seraphim", 10264, -2, -8, 0.75F) {
             Items = new List<TransformationItem>() {
                 new TransformationItem("The Bible", 33, -1, 34, 1.00F, 0.75F),
                 new TransformationItem("Rosary", 72, -19, -30, 1.00F, 0.80F),
@@ -62,7 +62,7 @@ namespace IsaacDashboard.TransformationTracker.Model {
             }
         };
 
-        public static readonly Transformation Bob = new Transformation("bob", "Bob", 7784, -1, 3, 0.90F) {
+        public static readonly Transformation Bob = new Transformation("bob", "Bob", 10268, -1, 3, 0.90F) {
             Items = new List<TransformationItem>() {
                 new TransformationItem("Bob's Rotten Head", 42, -22, -16, 1.75F, 0.65F),
                 new TransformationItem("Bob's Curse", 140, 19, 22, 1.50F, 0.75F),
@@ -71,7 +71,7 @@ namespace IsaacDashboard.TransformationTracker.Model {
             }
         };
 
-        public static readonly Transformation Spun = new Transformation("spun", "Spun", 7788, 0, 5, 0.85F) {
+        public static readonly Transformation Spun = new Transformation("spun", "Spun", 10272, 0, 5, 0.85F) {
             Items = new List<TransformationItem>() {
                 new TransformationItem("The Virus", 13, 38, 3, 1.50F, 0.50F),
                 new TransformationItem("Roid Rage", 14, 20, -20, 1.50F, 0.50F),
@@ -84,7 +84,7 @@ namespace IsaacDashboard.TransformationTracker.Model {
             }
         };
 
-        public static readonly Transformation Mom = new Transformation("mom", "Mom", 7792, 1, 3, 0.85F) {
+        public static readonly Transformation Mom = new Transformation("mom", "Mom", 10276, 1, 3, 0.85F) {
             Items = new List<TransformationItem>() {
                 new TransformationItem("Mom's Underwear", 29, -3, 25, 1.00F, 0.55F),
                 new TransformationItem("Mom's Heels", 30, -16, 39, 1.00F, 0.50F),
@@ -106,7 +106,7 @@ namespace IsaacDashboard.TransformationTracker.Model {
             }
         };
 
-        public static readonly Transformation Conjoined = new Transformation("conjoined", "Conjoined", 7796, 0, 7, 0.80F) {
+        public static readonly Transformation Conjoined = new Transformation("conjoined", "Conjoined", 10280, 0, 7, 0.80F) {
             Items = new List<TransformationItem>() {
                 new TransformationItem("Brother Bobby", 8, -31, -16, 1.50F, 0.55F),
                 new TransformationItem("Sister Maggy", 67, 27, -19, 1.50F, 0.55F),
@@ -118,7 +118,7 @@ namespace IsaacDashboard.TransformationTracker.Model {
             }
         };
 
-        public static readonly Transformation Leviathan = new Transformation("leviathan", "Leviathan", 7800, 1, -2, 0.65F) {
+        public static readonly Transformation Leviathan = new Transformation("leviathan", "Leviathan", 10284, 1, -2, 0.65F) {
             Items = new List<TransformationItem>() {
                 new TransformationItem("Pentagram", 51, -3, 35, 1.20F, 0.70F),
                 new TransformationItem("The Mark", 79, 35, -7, 1.40F, 0.55F),
@@ -131,7 +131,7 @@ namespace IsaacDashboard.TransformationTracker.Model {
             }
         };
 
-        public static readonly Transformation OhCrap = new Transformation("ohcrap", "Oh Crap", 7804, -1, 4, 0.80F) {
+        public static readonly Transformation OhCrap = new Transformation("ohcrap", "Oh Crap", 10288, -1, 4, 0.80F) {
             Items = new List<TransformationItem>() {
                 new TransformationItem("The Poop", 36, -27, -15, 2.20F, 0.55F),
                 new TransformationItem("E Coli", 236, 19, -19, 2.40F, 0.55F),
@@ -139,7 +139,7 @@ namespace IsaacDashboard.TransformationTracker.Model {
             }
         };
 
-        public static readonly Transformation Bookworm = new Transformation("bookworm", "Bookworm", 7808, 0, 7, 0.90F) {
+        public static readonly Transformation Bookworm = new Transformation("bookworm", "Bookworm", 10292, 0, 7, 0.90F) {
             Items = new List<TransformationItem>() {
                 new TransformationItem("The Bible", 33, 11, -3, 1.00F, 0.65F),
                 new TransformationItem("The Book Of Belial", 34, 34, -23, 1.00F, 0.65F),
@@ -155,7 +155,7 @@ namespace IsaacDashboard.TransformationTracker.Model {
             }
         };
 
-        public static readonly Transformation Adult = new Transformation("adult", "Adult", 7812, -5, 5, 0.75F) {
+        public static readonly Transformation Adult = new Transformation("adult", "Adult", 10296, -5, 5, 0.75F) {
             Items = new List<TransformationItem>() {
                 new TransformationPill("Puberty", 0, -3, -26, 2.40F),
                 new TransformationPill("Puberty", 0, -26, 17, 2.40F),
@@ -163,7 +163,7 @@ namespace IsaacDashboard.TransformationTracker.Model {
             }
         };
 
-        public static readonly Transformation SpiderBaby = new Transformation("spiderbabytrans", "Spider Baby", 7816, 2, 5, 0.80F) {
+        public static readonly Transformation SpiderBaby = new Transformation("spiderbabytrans", "Spider Baby", 10300, 2, 5, 0.80F) {
             Items = new List<TransformationItem>() {
                 new TransformationItem("Spider Bite", 89, -21, 30, 1.20F, 0.75F),
                 new TransformationItem("Mutant Spider", 153, 17, 27, 1.00F, 0.90F),
