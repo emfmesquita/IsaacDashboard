@@ -5,19 +5,14 @@
                      xmlns:wpfTool="clr-namespace:Xceed.Wpf.Toolkit;assembly=Xceed.Wpf.Toolkit"
                      xmlns:local="clr-namespace:IsaacDashboard"
                      xmlns:view="clr-namespace:IsaacDashboard.Commons.View"
-                     x:Class="KabalistusIsaacTools.MainWindow"
+                     x:Class="IsaacDashboard.MainWindow"
                      mc:Ignorable="d"
                      Title="MainWindow" 
                      Height="600" 
                      Width="800"
                      MinHeight="0" 
                      MinWidth="200" 
-                     Icon="Images/Icons/main.png" 
-                     KeyDown="OnKeyDown" 
-                     Closed="MainWindowClosed" 
-                     SizeChanged="WindowSizeChanged"
-                     LocationChanged="WindowLocationChanged"
-                     Activated="WindowActivated">
+                     Icon="Images/Icons/main.png" Closed="MainWindowClosed" KeyDown="OnKeyDown" Activated="WindowActivated" LocationChanged="WindowLocationChanged" SizeChanged="WindowSizeChanged">
     <Grid>
         <Menu x:Name="Menu" HorizontalAlignment="Stretch" Height="20" VerticalAlignment="Top" Background="#FFF0F0F0">
             <MenuItem Header="Settings">
@@ -93,6 +88,3 @@
         </TabControl>
     </Grid>
 </view:StatefulWindow>
-
-
-

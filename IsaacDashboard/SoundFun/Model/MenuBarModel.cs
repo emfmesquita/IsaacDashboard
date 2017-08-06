@@ -5,8 +5,8 @@ using static IsaacDashboard.Utils.ImageUtils;
 
 namespace IsaacDashboard.SoundFun.Model {
     public class MenuBarModel : BaseModel {
-        private readonly BitmapImage _playImage = ToBitmapImage(new Bitmap(GetImageFromResource("KabalistusIsaacTools.Images.SoundFun.play24.png")));
-        private readonly BitmapImage _pauseImage = ToBitmapImage(new Bitmap(GetImageFromResource("KabalistusIsaacTools.Images.SoundFun.pause24.png")));
+        private readonly BitmapImage _playImage = ToBitmapImage(new Bitmap(GetImageFromResource("IsaacDashboard.Images.SoundFun.play24.png")));
+        private readonly BitmapImage _pauseImage = ToBitmapImage(new Bitmap(GetImageFromResource("IsaacDashboard.Images.SoundFun.pause24.png")));
         
         private bool _playButtonEnabled;
         private BitmapImage _playButtonImage;

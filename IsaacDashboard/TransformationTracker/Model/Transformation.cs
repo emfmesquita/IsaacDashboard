@@ -17,7 +17,7 @@ namespace IsaacDashboard.TransformationTracker.Model {
             Name = name;
             MemoryOffset = memoryOffset;
             I18N = i18N;
-            var transfotmationImageResource = $"KabalistusIsaacTools.Images.Transformations.{name}.png";
+            var transfotmationImageResource = $"IsaacDashboard.Images.Transformations.{name}.png";
             TransformationImageModel = new GeneralImageModel(transfotmationImageResource, i18N, x, y) {
                 Scale = scale,
                 Visibility = Visibility.Hidden

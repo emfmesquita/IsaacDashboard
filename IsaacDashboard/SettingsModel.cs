@@ -3,6 +3,7 @@ using System.Windows.Media;
 using IsaacDashboard.Model;
 using IsaacDashboard.Serializer;
 using IsaacDashboard.Utils;
+using static IsaacDashboard.Serializer.IsaacDashSerializer;
 
 namespace IsaacDashboard {
     public class SettingsModel : BaseModel {
@@ -13,11 +14,11 @@ namespace IsaacDashboard {
         private Color _blacklistedIconColor;
 
         public SettingsModel() {
-            BackgroundColor = IsaacDashSerializer.Settings.GeneralSettings.BackgroundColor;
-            ForegroundColor = IsaacDashSerializer.Settings.GeneralSettings.TextColor;
-            ShowTransformationImage = IsaacDashSerializer.Settings.TransformationTrackerSettings.ShowTransformationImage ?? true;
-            ShowBlacklistedIcon = IsaacDashSerializer.Settings.TransformationTrackerSettings.ShowBlacklistedIcon ?? true;
-            BlacklistedIconColor = IsaacDashSerializer.Settings.TransformationTrackerSettings.BlacklistedIconColor;
+            BackgroundColor = Settings.GeneralSettings.BackgroundColor;
+            ForegroundColor = Settings.GeneralSettings.TextColor;
+            ShowTransformationImage = Settings.TransformationTrackerSettings.ShowTransformationImage ?? true;
+            ShowBlacklistedIcon = Settings.TransformationTrackerSettings.ShowBlacklistedIcon ?? true;
+            BlacklistedIconColor = Settings.TransformationTrackerSettings.BlacklistedIconColor;
         }
 
         public Color BackgroundColor {

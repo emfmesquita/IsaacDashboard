@@ -35,7 +35,7 @@ namespace IsaacDashboard.Utils {
         }
 
         public static Image GetImageFromResource(string resource) {
-            if (!resource.StartsWith("KabalistusIsaacTools")) return !File.Exists(resource) ? null : Image.FromFile(resource);
+            if (!resource.StartsWith("IsaacDashboard")) return !File.Exists(resource) ? null : Image.FromFile(resource);
             var assembly = Assembly.GetExecutingAssembly();
             var stream = assembly.GetManifestResourceStream(resource);
             return stream == null ? null : Image.FromStream(stream);

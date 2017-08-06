@@ -12,7 +12,7 @@ namespace IsaacDashboard.TransformationTracker.Model {
 
         private const float UnlitImageBrightness = 0.3F;
         private const float UnlitImageContrast = 0.8F;
-        private const string BlockImageResource = "KabalistusIsaacTools.Images.block.png";
+        private const string BlockImageResource = "IsaacDashboard.Images.block.png";
 
         private bool _touched;
         private bool _blocked;

@@ -14,7 +14,7 @@ namespace IsaacDashboard.TransformationTracker {
     /// </summary>
     public partial class TransformationTracker : UserControl {
         public static CenteredImageModel BlockIconImageModel;
-        private const string BlockImageResource = "KabalistusIsaacTools.Images.block.png";
+        private const string BlockImageResource = "IsaacDashboard.Images.block.png";
 
         private bool _started;
 
