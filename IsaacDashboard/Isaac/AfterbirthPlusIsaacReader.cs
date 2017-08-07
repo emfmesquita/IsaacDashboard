@@ -16,9 +16,9 @@ namespace IsaacDashboard.Isaac {
         private const int TimeCounterOffset = 2177804;
         private const int GamePausedOffset = 1244692;
         
-        private const int SmeltedTrinketsPointerOffset = 7588;
+        private const int SmeltedTrinketsPointerOffset = 10072;
 
-        private const int VoidedItemsInitOffset = 7612;
+        private const int VoidedItemsInitOffset = 10096;
 
         private const int PillsOffset = 32080;
         private const int PillKnownOffset = 32133;
@@ -39,14 +39,14 @@ namespace IsaacDashboard.Isaac {
 
         public List<Item> GetSmeltedTrinkets() {
             var smeltedTrinketsOffset = GetPlayerInfo(SmeltedTrinketsPointerOffset);
-            var trinketsCount = ModdedHelper.UnmoddedTrinketsCount + ModdedHelper.ModdedTrinketsCount();
+            var trinketsCount = ModdedHelper.LastUnmoddedTrinketId + ModdedHelper.ModdedTrinketsCount();
             var smeltedTrinkets = Read(smeltedTrinketsOffset + 1, trinketsCount);
 
             var currentSmeltedTrinkets = new List<Item>();
             for (var i = 0; i < smeltedTrinkets.Length; i++) {
                 if (smeltedTrinkets[i] != 1) continue;
 
-                var trinket = i < ModdedHelper.UnmoddedTrinketsCount ? Trinkets.AllTrinkets[i + 1] : ModdedHelper.GetModdedTrinket(i + 1);
+                var trinket = i < ModdedHelper.LastUnmoddedTrinketId ? Trinkets.AllTrinkets[i + 1] : ModdedHelper.GetModdedTrinket(i + 1);
                 currentSmeltedTrinkets.Add(trinket);
             }
 
@@ -151,7 +151,7 @@ namespace IsaacDashboard.Isaac {
         }
 
         private static Item GetItem(int id) {
-            if (id > ModdedHelper.UnmoddedItemsCount) {
+            if (id > ModdedHelper.LastUnmoddedItemId) {
                 return ModdedHelper.GetModdedItem(id);
             }
 

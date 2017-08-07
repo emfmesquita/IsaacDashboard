@@ -17,14 +17,7 @@ namespace IsaacDashboard.SmeltedTrinkets {
 
         private static readonly Dictionary<string, string> WikiDictionary = new Dictionary<string, string>(){
             { "Cancer", "Cancer_(Trinket)"},
-            { "Tick", "The_Tick"},
-            { "???'s Soul", "%3F%3F%3F%27s_Soul"},
-            { "Rib of Greed", "Rib_Of_Greed"},
-            { "Locust of Wrath", "Locust_Of_Wrath"},
-            { "Locust of Pestilence", "Locust_Of_Pestilence"},
-            { "Locust of Famine", "Locust_Of_Famine"},
-            { "Locust of Death", "Locust_Of_Death"},
-            { "Locust of Conquest", "Locust_Of_Conquest"}
+            { "???'s Soul", "%3F%3F%3F%27s_Soul"}
         };
 
         public SmeltedTrinkets() {

@@ -21,6 +21,8 @@ namespace IsaacDashboard.TransformationTracker.Providers {
                 UpdateSuperBumTransformation(transformation);
             } else if (Adult.Equals(transformation)) {
                 UpdateAdultTransformation(transformation);
+            } else if (Stompy.Equals(transformation)) {
+                UpdateStompyTransformation(transformation);
             } else {
                 base.UpdateTransformation(transformation);
             }
@@ -62,6 +64,19 @@ namespace IsaacDashboard.TransformationTracker.Providers {
                 if (pillId != PubertyId) continue;
                 _pubertyPill = i;
                 return;
+            }
+        }
+
+        private static void UpdateStompyTransformation(Transformation stompyTransformation) {
+            var counter = GetPlayerInfo(Stompy.MemoryOffset);
+            counter = counter > 3 ? 3 : counter;
+
+            stompyTransformation.ShowTransformationImage = counter == 3;
+            stompyTransformation.Count = counter.ToString();
+
+            for (var i = 0; i < 3; i++) {
+                var magMush = stompyTransformation.Items[i];
+                magMush.Touched = i + 1 <= counter;
             }
         }
     }

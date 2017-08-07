@@ -512,7 +512,26 @@ namespace IsaacDashboard.Isaac {
             {507, new Item("Sharp Straw", 507)},
             {508, new Item("Mom's Razor", 508)},
             {509, new Item("Bloodshot Eye", 509)},
-            {510, new Item("Delirious", 510)}
+            {510, new Item("Delirious", 510)},
+            {511, new Item("Angry Fly", 511)},
+            {512, new Item("Black Hole", 512)},
+            {513, new Item("Bozo", 513)},
+            {514, new Item("Broken Modem", 514)},
+            {515, new Item("Mystery Gift", 515)},
+            {516, new Item("Sprinkler", 516)},
+            {517, new Item("Fast Bombs", 517)},
+            {518, new Item("Buddy in a Box", 518)},
+            {519, new Item("Lil Delirium", 519)},
+            {520, new Item("Jumper Cables", 520)},
+            {521, new Item("Coupon", 521)},
+            {522, new Item("Telekinesis", 522)},
+            {523, new Item("Moving Box", 523)},
+            {524, new Item("Technology Zero", 524)},
+            {525, new Item("Leprosy", 525)},
+            {526, new Item("7 Seals", 526)},
+            {527, new Item("Mr. ME!", 527)},
+            {528, new Item("Angelic Prism", 528)},
+            {529, new Item("Pop!", 529)}
         };
 
         public static readonly Dictionary<int, Item> AntibirthItems = new Dictionary<int, Item>() {

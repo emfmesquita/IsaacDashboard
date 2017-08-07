@@ -942,7 +942,13 @@
     <EmbeddedResource Include="Images\block.png" />
     <Resource Include="Images\ring.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Images\Trinkets\t120.png" />
+    <EmbeddedResource Include="Images\Trinkets\t121.png" />
+    <EmbeddedResource Include="Images\Trinkets\t122.png" />
+    <EmbeddedResource Include="Images\Trinkets\t123.png" />
+    <EmbeddedResource Include="Images\Trinkets\t124.png" />
+  </ItemGroup>
   <ItemGroup>
     <COMReference Include="WMPLib">
       <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
@@ -953,6 +959,30 @@
       <Isolated>False</Isolated>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Images\Items\c511.png" />
+    <EmbeddedResource Include="Images\Items\c512.png" />
+    <EmbeddedResource Include="Images\Items\c513.png" />
+    <EmbeddedResource Include="Images\Items\c514.png" />
+    <EmbeddedResource Include="Images\Items\c515.png" />
+    <EmbeddedResource Include="Images\Items\c516.png" />
+    <EmbeddedResource Include="Images\Items\c517.png" />
+    <EmbeddedResource Include="Images\Items\c518.png" />
+    <EmbeddedResource Include="Images\Items\c519.png" />
+    <EmbeddedResource Include="Images\Items\c520.png" />
+    <EmbeddedResource Include="Images\Items\c521.png" />
+    <EmbeddedResource Include="Images\Items\c522.png" />
+    <EmbeddedResource Include="Images\Items\c523.png" />
+    <EmbeddedResource Include="Images\Items\c524.png" />
+    <EmbeddedResource Include="Images\Items\c525.png" />
+    <EmbeddedResource Include="Images\Items\c526.png" />
+    <EmbeddedResource Include="Images\Items\c527.png" />
+    <EmbeddedResource Include="Images\Items\c528.png" />
+    <EmbeddedResource Include="Images\Items\c529.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Images\Transformations\stompy.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

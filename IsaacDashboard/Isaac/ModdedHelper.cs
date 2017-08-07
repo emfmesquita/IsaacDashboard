@@ -7,9 +7,9 @@ using static IsaacDashboard.Utils.MemoryReader;
 
 namespace IsaacDashboard.Isaac {
     public class ModdedHelper {
-        public const int UnmoddedItemsCount = 510;
-        public const int UnmoddedTrinketsCount = 119;
-        public const int UnmoddedPillsCount = 47;
+        public static readonly int LastUnmoddedItemId = Items.AfterbirthPlusItems.Last().Key;
+        public static readonly int LastUnmoddedTrinketId = Trinkets.AllTrinkets.Last().Key;
+        public static readonly int UnmoddedPillsCount = Pills.AllPills.Count;
 
         private const int ModdedItemsInitOffset = 56968;
         private const int ModdedTrinketsInitOffset = 56980;
@@ -55,12 +55,12 @@ namespace IsaacDashboard.Isaac {
         }
 
         public static ModdedItem GetModdedItem(int id) {
-            var moddedIndex = id - UnmoddedItemsCount - 1;
+            var moddedIndex = id - LastUnmoddedItemId - 1;
             return moddedIndex >= ModdedItems.Count ? null : ModdedItems[moddedIndex];
         }
 
         public static ModdedItem GetModdedTrinket(int id) {
-            var moddedIndex = id - UnmoddedTrinketsCount - 1;
+            var moddedIndex = id - LastUnmoddedTrinketId - 1;
             return moddedIndex >= ModdedTrinkets.Count ? null : ModdedTrinkets[moddedIndex];
         }
 
@@ -74,28 +74,28 @@ namespace IsaacDashboard.Isaac {
         }
 
         private static IEnumerable<ModdedItem> LoadModdedItems() {
-            return GetModded(ModdedItemsInitOffset, UnmoddedItemsCount);
+            return GetModded(ModdedItemsInitOffset, LastUnmoddedItemId);
         }
 
         private static IEnumerable<ModdedItem> LoadModdedTrinkets() {
-            return GetModded(ModdedTrinketsInitOffset, UnmoddedTrinketsCount);
+            return GetModded(ModdedTrinketsInitOffset, LastUnmoddedTrinketId);
         }
 
         private static IEnumerable<ModdedItem> LoadModdedPills() {
             return GetModded(ModdedPillsInitOffset, UnmoddedPillsCount, true, false);
         }
 
-        private static IEnumerable<ModdedItem> GetModded(int initOffset, int unmoddedSize, bool zeroBased = false, bool loadLocation = true) {
+        private static IEnumerable<ModdedItem> GetModded(int initOffset, int lastUnmoded, bool zeroBased = false, bool loadLocation = true) {
             var moddedItems = new List<ModdedItem>();
             var moddedItemsInit = GetGameManagerInfo(initOffset, 4);
             var moddedItemsEnd = GetGameManagerInfo(initOffset + 4, 4);
             var firstIndex = zeroBased ? 0 : 1;
-            var moddedItemsSize = (moddedItemsEnd - moddedItemsInit) / 4 - firstIndex - unmoddedSize;
+            var moddedItemsSize = (moddedItemsEnd - moddedItemsInit) / 4 - firstIndex - lastUnmoded;
             if (moddedItemsSize <= 0) {
                 return moddedItems;
             }
             for (var i = 0; i < moddedItemsSize; i++) {
-                var moddedItem = LoadModdedItem(unmoddedSize + firstIndex + i, moddedItemsInit, loadLocation);
+                var moddedItem = LoadModdedItem(lastUnmoded + firstIndex + i, moddedItemsInit, loadLocation);
                 if (moddedItem != null) moddedItems.Add(moddedItem);
             }
             return moddedItems;

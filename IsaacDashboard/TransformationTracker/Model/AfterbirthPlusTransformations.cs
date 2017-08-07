@@ -16,23 +16,24 @@ namespace IsaacDashboard.TransformationTracker.Model {
 
         public static readonly Transformation Beelzebub = new Transformation("beelzebub", "Beelzebub", 10256, -1, -6, 0.85F) {
             Items = new List<TransformationItem>() {
-                new TransformationItem("Skatole", 9, 31, 29, 1.00F, 0.60F),
-                new TransformationItem("Halo Of Flies", 10, -34, 26, 1.00F, 0.65F),
-                new TransformationItem("Distant Admiration", 57, -12, 41, 1.00F, 0.50F),
-                new TransformationItem("Forever Alone", 128, -11, 24, 1.00F, 0.50F),
-                new TransformationItem("Infestation", 148, 12, 38, 1.00F, 0.60F),
-                new TransformationItem("The Mulligan", 151, 37, -15, 1.00F, 0.70F),
-                new TransformationItem("Hive Mind", 248, -39, 1, 1.00F, 0.65F),
-                new TransformationItem("Smart Fly", 264, 11, 16, 1.00F, 0.60F),
-                new TransformationItem("BBF", 272, -10, 6, 1.00F, 0.60F),
-                new TransformationItem("Best Bud", 274, -4, -20, 1.00F, 0.60F),
-                new TransformationItem("Big Fan", 279, 18, -31, 1.00F, 0.65F),
-                new TransformationItem("???'s Only Friend", 320, 37, 8, 1.05F, 0.65F),
-                new TransformationItem("Friend Zone", 364, -2, -39, 1.00F, 0.60F),
-                new TransformationItem("Lost Fly", 365, -36, -20, 1.00F, 0.55F),
-                new TransformationItem("Obsessed Fan", 426, -21, -11, 1.00F, 0.55F),
-                new TransformationItem("Papa Fly", 430, -24, -33, 1.00F, 0.55F),
-                new TransformationItem("Jar Of Flies", 434, 11, -6, 1.00F, 0.60F)
+                new TransformationItem("Skatole", 9, 33, 27, 1.00F, 0.60F),
+                new TransformationItem("Halo Of Flies", 10, -36, 26, 1.00F, 0.65F),
+                new TransformationItem("Distant Admiration", 57, -13, 37, 1.00F, 0.50F),
+                new TransformationItem("Forever Alone", 128, -12, 19, 1.00F, 0.50F),
+                new TransformationItem("Infestation", 148, 12, 27, 1.00F, 0.60F),
+                new TransformationItem("The Mulligan", 151, 37, -19, 1.00F, 0.70F),
+                new TransformationItem("Hive Mind", 248, -40, 2, 1.00F, 0.65F),
+                new TransformationItem("Smart Fly", 264, 14, 6, 1.00F, 0.60F),
+                new TransformationItem("BBF", 272, -11, 0, 1.00F, 0.60F),
+                new TransformationItem("Best Bud", 274, -6, -25, 1.00F, 0.60F),
+                new TransformationItem("Big Fan", 279, 19, -36, 1.00F, 0.65F),
+                new TransformationItem("???'s Only Friend", 320, 38, 5, 1.05F, 0.65F),
+                new TransformationItem("Friend Zone", 364, -4, -42, 1.00F, 0.60F),
+                new TransformationItem("Lost Fly", 365, 11, 45, 1.00F, 0.55F),
+                new TransformationItem("Obsessed Fan", 426, -22, -14, 1.00F, 0.55F),
+                new TransformationItem("Papa Fly", 430, -27, -34, 1.00F, 0.55F),
+                new TransformationItem("Jar Of Flies", 434, 10, -14, 1.00F, 0.60F),
+                new TransformationItem("Angry Fly", 511, -40, -21, 1.00F, 0.60F)
             }
         };
 
@@ -141,17 +142,18 @@ namespace IsaacDashboard.TransformationTracker.Model {
 
         public static readonly Transformation Bookworm = new Transformation("bookworm", "Bookworm", 10292, 0, 7, 0.90F) {
             Items = new List<TransformationItem>() {
-                new TransformationItem("The Bible", 33, 11, -3, 1.00F, 0.65F),
+                new TransformationItem("The Bible", 33, 12, -12, 1.00F, 0.65F),
                 new TransformationItem("The Book Of Belial", 34, 34, -23, 1.00F, 0.65F),
                 new TransformationItem("The Necronomicon", 35, -11, -38, 1.00F, 0.65F),
                 new TransformationItem("Book Of Shadows", 58, 22, 26, 1.00F, 0.65F),
                 new TransformationItem("Anarchist Cookbook", 65, -25, 26, 1.00F, 0.65F),
-                new TransformationItem("Book Of Revelations", 78, -11, -3, 1.00F, 0.65F),
+                new TransformationItem("Book Of Revelations", 78, -11, -12, 1.00F, 0.65F),
                 new TransformationItem("The Book Of Sin", 97, 12, -38, 1.00F, 0.65F),
+                new TransformationItem("Monster Manual", 123, -1, 38, 1.00F, 0.65F),
                 new TransformationItem("Telepathy For Dummies", 192, -39, 1, 1.00F, 0.65F),
                 new TransformationItem("How To Jump", 282, 38, 6, 1.00F, 0.65F),
                 new TransformationItem("Book Of Secrets", 287, -32, -23, 1.00F, 0.65F),
-                new TransformationItem("Satanic Bible", 292, 0, 35, 1.00F, 0.65F)
+                new TransformationItem("The Satanic Bible", 292, 0, 14, 1.00F, 0.65F),
             }
         };
 
@@ -182,6 +184,14 @@ namespace IsaacDashboard.TransformationTracker.Model {
             }
         };
 
+        public static readonly Transformation Stompy = new Transformation("stompy", "Stompy", 10304, -1, 0, 1f) {
+            Items = new List<TransformationItem>() {
+                new TransformationItem("Stompy", 12, -1, -26, 2.00F, 1.00F),
+                new TransformationItem("Stompy", 12, -22, 19, 2.00F, 1.00F),
+                new TransformationItem("Stompy", 12, 21, 19, 2.00F, 1.00F)
+            }
+        };
+
         public static Dictionary<string, Transformation> AllTransformations = new Dictionary<string, Transformation>() {
             {Guppy.Name, Guppy},
             {Beelzebub.Name, Beelzebub},
@@ -196,7 +206,8 @@ namespace IsaacDashboard.TransformationTracker.Model {
             {SuperBum.Name, SuperBum},
             {Bookworm.Name, Bookworm},
             {Adult.Name, Adult},
-            {SpiderBaby.Name, SpiderBaby}
+            {SpiderBaby.Name, SpiderBaby},
+            {Stompy.Name, Stompy}
         };
     }
 }

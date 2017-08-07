@@ -113,14 +113,19 @@ namespace IsaacDashboard.Isaac {
             {109, new Item("Duct Tape", 109)},
             {110, new Item("Silver Dollar", 110)},
             {111, new Item("Bloody Crown", 111)},
-            {112, new Item("Pay To Win", 112)},
+            {112, new Item("Pay to Win", 112)},
             {113, new Item("Locust of Wrath", 113)},
             {114, new Item("Locust of Pestilence", 114)},
             {115, new Item("Locust of Famine", 115)},
             {116, new Item("Locust of Death", 116)},
             {117, new Item("Locust of Conquest", 117)},
             {118, new Item("Bat Wing", 118)},
-            {119, new Item("Stem Cell", 119)}
+            {119, new Item("Stem Cell", 119)},
+            {120, new Item("Hairpin", 120)},
+            {121, new Item("Wooden Cross", 121)},
+            {122, new Item("Butter!", 122)},
+            {123, new Item("Filigree Feather", 123)},
+            {124, new Item("Door Stop", 124)}
         };
     }
 }
